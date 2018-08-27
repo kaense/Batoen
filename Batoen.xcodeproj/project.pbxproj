@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		93728E592104D31900B15FF5 /* 魔王.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 93728E582104D31900B15FF5 /* 魔王.jpeg */; };
+		938F26012126F3B40007A7E8 /* スライム.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 938F26002126F3B40007A7E8 /* スライム.jpg */; };
+		938F26032126F9690007A7E8 /* ドラゴン.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 938F26022126F9680007A7E8 /* ドラゴン.jpg */; };
+		938F2605212828140007A7E8 /* クリア画面.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 938F2604212828140007A7E8 /* クリア画面.jpg */; };
+		938F26092128334C0007A7E8 /* 爆発.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 938F26082128334C0007A7E8 /* 爆発.jpg */; };
+		938F260B212833A80007A7E8 /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = 938F260A212833A80007A7E8 /* AppIcon.appiconset */; };
+		938F260F212858B20007A7E8 /* HPゲージ.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 938F260E212858B20007A7E8 /* HPゲージ.jpg */; };
 		93D3281320FE7501009A624F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D3281220FE7501009A624F /* AppDelegate.swift */; };
 		93D3281520FE7501009A624F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D3281420FE7501009A624F /* ViewController.swift */; };
 		93D3281820FE7501009A624F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93D3281620FE7501009A624F /* Main.storyboard */; };
@@ -26,6 +33,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		93728E582104D31900B15FF5 /* 魔王.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "魔王.jpeg"; sourceTree = "<group>"; };
+		938F26002126F3B40007A7E8 /* スライム.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "スライム.jpg"; sourceTree = "<group>"; };
+		938F26022126F9680007A7E8 /* ドラゴン.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ドラゴン.jpg"; sourceTree = "<group>"; };
+		938F2604212828140007A7E8 /* クリア画面.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "クリア画面.jpg"; sourceTree = "<group>"; };
+		938F26082128334C0007A7E8 /* 爆発.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "爆発.jpg"; sourceTree = "<group>"; };
+		938F260A212833A80007A7E8 /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppIcon.appiconset; sourceTree = "<group>"; };
+		938F260E212858B20007A7E8 /* HPゲージ.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "HPゲージ.jpg"; sourceTree = "<group>"; };
 		93D3280F20FE7501009A624F /* Batoen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Batoen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93D3281220FE7501009A624F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93D3281420FE7501009A624F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +94,13 @@
 				93D3281220FE7501009A624F /* AppDelegate.swift */,
 				93D3281420FE7501009A624F /* ViewController.swift */,
 				93D3281620FE7501009A624F /* Main.storyboard */,
+				938F260E212858B20007A7E8 /* HPゲージ.jpg */,
+				938F26082128334C0007A7E8 /* 爆発.jpg */,
+				938F2604212828140007A7E8 /* クリア画面.jpg */,
+				938F26002126F3B40007A7E8 /* スライム.jpg */,
+				938F26022126F9680007A7E8 /* ドラゴン.jpg */,
+				93728E582104D31900B15FF5 /* 魔王.jpeg */,
+				938F260A212833A80007A7E8 /* AppIcon.appiconset */,
 				93D3281920FE7502009A624F /* Assets.xcassets */,
 				93D3281B20FE7502009A624F /* LaunchScreen.storyboard */,
 				93D3281E20FE7502009A624F /* Info.plist */,
@@ -177,9 +198,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				938F26092128334C0007A7E8 /* 爆発.jpg in Resources */,
+				938F26032126F9690007A7E8 /* ドラゴン.jpg in Resources */,
+				93728E592104D31900B15FF5 /* 魔王.jpeg in Resources */,
 				93D3281D20FE7502009A624F /* LaunchScreen.storyboard in Resources */,
+				938F260B212833A80007A7E8 /* AppIcon.appiconset in Resources */,
 				93D3281A20FE7502009A624F /* Assets.xcassets in Resources */,
+				938F2605212828140007A7E8 /* クリア画面.jpg in Resources */,
+				938F26012126F3B40007A7E8 /* スライム.jpg in Resources */,
 				93D3281820FE7501009A624F /* Main.storyboard in Resources */,
+				938F260F212858B20007A7E8 /* HPゲージ.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +387,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UAF87342VZ;
 				INFOPLIST_FILE = Batoen/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -376,6 +405,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UAF87342VZ;
 				INFOPLIST_FILE = Batoen/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
