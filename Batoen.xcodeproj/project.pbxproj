@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		93728E592104D31900B15FF5 /* 魔王.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 93728E582104D31900B15FF5 /* 魔王.jpeg */; };
+		937ACB3F2135F95A0073A4BA /* 勇者.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 937ACB3E2135F95A0073A4BA /* 勇者.jpg */; };
 		938F26012126F3B40007A7E8 /* スライム.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 938F26002126F3B40007A7E8 /* スライム.jpg */; };
 		938F26032126F9690007A7E8 /* ドラゴン.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 938F26022126F9680007A7E8 /* ドラゴン.jpg */; };
 		938F2605212828140007A7E8 /* クリア画面.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 938F2604212828140007A7E8 /* クリア画面.jpg */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		93728E582104D31900B15FF5 /* 魔王.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "魔王.jpeg"; sourceTree = "<group>"; };
+		937ACB3E2135F95A0073A4BA /* 勇者.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "勇者.jpg"; sourceTree = "<group>"; };
 		938F26002126F3B40007A7E8 /* スライム.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "スライム.jpg"; sourceTree = "<group>"; };
 		938F26022126F9680007A7E8 /* ドラゴン.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ドラゴン.jpg"; sourceTree = "<group>"; };
 		938F2604212828140007A7E8 /* クリア画面.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "クリア画面.jpg"; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				93D3281220FE7501009A624F /* AppDelegate.swift */,
 				93D3281420FE7501009A624F /* ViewController.swift */,
 				93D3281620FE7501009A624F /* Main.storyboard */,
+				937ACB3E2135F95A0073A4BA /* 勇者.jpg */,
 				938F260E212858B20007A7E8 /* HPゲージ.jpg */,
 				938F26082128334C0007A7E8 /* 爆発.jpg */,
 				938F2604212828140007A7E8 /* クリア画面.jpg */,
@@ -200,6 +203,7 @@
 			files = (
 				938F26092128334C0007A7E8 /* 爆発.jpg in Resources */,
 				938F26032126F9690007A7E8 /* ドラゴン.jpg in Resources */,
+				937ACB3F2135F95A0073A4BA /* 勇者.jpg in Resources */,
 				93728E592104D31900B15FF5 /* 魔王.jpeg in Resources */,
 				93D3281D20FE7502009A624F /* LaunchScreen.storyboard in Resources */,
 				938F260B212833A80007A7E8 /* AppIcon.appiconset in Resources */,

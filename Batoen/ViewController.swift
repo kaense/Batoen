@@ -25,28 +25,19 @@ class ViewController: UIViewController {
     @IBOutlet var enemyImage: UIImageView!
     @IBOutlet var buttonDice: UIButton!
     @IBOutlet var buttonReset: UIButton!
-    
     @IBOutlet var name: UILabel!
     
-    //@IBOutlet var HPgauge: UIImageView!
-    //@IBOutlet var HPgaugeTEST: UIImageView!
-    //let HPgaugeMaxWidth=self.HPgauge.size.width
-    //let HPgaugeMaxWidth=#imageLiteral(resourceName: "HPゲージ.jpg").size.width
-    //let HPgaugeMaxHeight=#imageLiteral(resourceName: "HPゲージ.jpg").size.height
-    //var HPgaugeMaxWidth = 10
-    //var HpX:Int = 10
-    //var HpY:Int = 10
     
-    let skillDamageList:Dictionary=["パンチ":20,"キック":30,"ヒーローアタック":50,"チョップ":10,"踏みつける":10,"ビーム":20,"炎魔法":10,"光魔法":30,"ホーリースピア":60,"くっつく":10,"飲み込む":20,"溶解液":30,"爪攻撃":20,"体当たり":20,"炎":30,"杖攻撃":10,"黒魔法":30,"ブラックホール":70]
-    
+    let zukan:Dictionary=["勇者":1,"魔法使い":2,"スライム":3,"ドラゴン":4,"魔王":5]
     let skillListOfHero=["パンチ","キック","ヒーローアタック"]
     let skillListOfMage=["炎魔法","光魔法","ホーリースピア"]
     let skillListOfEnemy1=["くっつく","飲み込む","溶解液"]
     let skillListOfEnemy2=["爪攻撃","体当たり","炎"]
     let skillListOfEnemy3=["杖攻撃","黒魔法","ブラックホール"]
+    let skillDamageList:Dictionary=["パンチ":20,"キック":30,"ヒーローアタック":50,"チョップ":10,"踏みつける":10,"ビーム":20,"炎魔法":10,"光魔法":30,"ホーリースピア":60,"くっつく":10,"飲み込む":20,"溶解液":30,"爪攻撃":20,"体当たり":20,"炎":30,"杖攻撃":10,"黒魔法":30,"ブラックホール":70]
+
     
     var cReset = 1
-    
     var atacker = 0
     
     var imageView:UIImageView = UIImageView(image: #imageLiteral(resourceName: "HPゲージ.jpg"))
@@ -72,10 +63,11 @@ class ViewController: UIViewController {
             self.atacker=0
             if self.name.text=="勇者"{
             }else{
-                self.name.text="勇者"
-                self.skillFirstHero.text=self.skillListOfHero[0]
-                self.skillSecondHero.text=self.skillListOfHero[1]
-                self.skillThirdHero.text=self.skillListOfHero[2]
+                var Hero:hero = hero(name:"勇者")
+                self.name.text = Hero.name
+                self.skillFirstHero.text = Hero.skill1
+                self.skillSecondHero.text = Hero.skill2
+                self.skillThirdHero.text = Hero.skill3
                 self.reset(level:0)
             }
         })
@@ -91,7 +83,6 @@ class ViewController: UIViewController {
                 self.reset(level:0)
             }
         })
-        
         alert.addAction(HeroAction)
         alert.addAction(MageAction)
         present(alert, animated: true, completion: nil)
@@ -124,8 +115,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //HPgauge.image=#imageLiteral(resourceName: "HPゲージ.jpg")
-        
         skillFirstHero.text=self.skillListOfHero[0]
         skillSecondHero.text=self.skillListOfHero[1]
         skillThirdHero.text=self.skillListOfHero[2]
@@ -145,7 +134,6 @@ class ViewController: UIViewController {
         buttonDice.isEnabled=false
         atackOfHero()
         checkHp()
-        //Thread.sleep(forTimeInterval: 1)//sleep(1)
         if onBattle==true{
             RunLoop.current.run(until: Date.init(timeIntervalSinceNow: 1.0))
             atackOfEnemy()
@@ -199,19 +187,11 @@ class ViewController: UIViewController {
                 break
         }
 
-        //HPgaugeWidthOfEnemy = hpOfEnemyLabel.frame.size.width
-        //HPgaugeHeightOfEnemy = hpOfEnemyLabel.frame.size.height
-        //HPgaugeXOfEnemy = hpOfEnemyLabel.frame.origin.x
-        //HPgaugeYOfEnemy = hpOfEnemyLabel.frame.origin.y
         HPgaugeXYOfEnemy = CGRect(x:Int(HPgaugeXOfEnemy),y:Int(HPgaugeYOfEnemy),width:Int( Float(Float(hpOfEnemy)/Float(maxHpOfEnemy))*Float(myBoundSize.width*0.7)),height:Int(HPgaugeHeightOfEnemy))
         imageView.frame = HPgaugeXYOfEnemy
         view.addSubview(imageView)
         view.sendSubview(toBack: imageView)
 
-        //HPgaugeWidthOfHero = hpOfHeroLabel.frame.size.width
-        //HPgaugeHeightOfHero = hpOfHeroLabel.frame.size.height
-        //HPgaugeXOfHero = hpOfHeroLabel.frame.origin.x
-        //HPgaugeYOfHero = hpOfHeroLabel.frame.origin.y
         HPgaugeXYOfHero = CGRect(x:Int(HPgaugeXOfHero),y:Int(HPgaugeYOfHero),width:Int( Float(Float(hpOfHero)/Float(maxHpOfHero))*Float(myBoundSize.width*0.7)),height:Int(HPgaugeHeightOfHero))
         imageView2.frame = HPgaugeXYOfHero
         view.addSubview(imageView2)
@@ -222,23 +202,6 @@ class ViewController: UIViewController {
         onBattle=true
         let comp:Int = atack(atacker: atacker)
         hpOfEnemyLabel.text = String(hpOfEnemy)
-        //HPgauge.draw(
-        //HPgaugeTEST.draw(CGRect(x:0,y:0,width:Int( Float(hpOfEnemy/100)*Float(HPgaugeMaxWidth)),height:20))
-        //let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
-        //UIGraphicsEndImageContext()
-        //let rectXY:CGRect = CGRect(x:Int(HPgaugeTEST.frame.origin.x),y:Int(HPgaugeTEST.frame.origin.y),width:Int( Float(hpOfEnemy/maxHpOfEnemy)*Float(HPgaugeMaxWidth)),height:Int(HPgaugeMaxHeight))
-        //let rectXY:CGRect = CGRect(x:0,y:0,width:Int( Float(Float(hpOfEnemy)/Float(maxHpOfEnemy            ))*Float(142)),height:20)
-        //let rectXY:CGRect = CGRect(x:0,y:0,width:Int( Float(Float(hpOfEnemy)/Float(maxHpOfEnemy            ))*Float(HPgaugeMaxWidth)),height:20)
-        //let rectXY:CGRect = CGRect(x:HpX,y:HpY,width:Int( Float(Float(hpOfEnemy)/Float(maxHpOfEnemy))*Float(HPgaugeMaxWidth)),height:20)
-        //HPgauge.frame=rectXY
-        //HPgauge.draw(CGRect(x:HpX,y:HpY,width:Int( Float(Float(hpOfEnemy)/Float(maxHpOfEnemy))*Float(HPgaugeMaxWidth)),height:20))
-        //HPgaugeTEST.frame=rectXY
-        //view.addSubview(HPgaugeTEST)
-        
-        //HPgaugeWidthOfEnemy = hpOfEnemyLabel.frame.size.width
-        //HPgaugeHeightOfEnemy = hpOfEnemyLabel.frame.size.height
-        //HPgaugeXOfEnemy = hpOfEnemyLabel.frame.origin.x
-        //HPgaugeYOfEnemy = hpOfEnemyLabel.frame.origin.y
         HPgaugeXYOfEnemy = CGRect(x:Int(HPgaugeXOfEnemy),y:Int(HPgaugeYOfEnemy),width:Int( Float(Float(hpOfEnemy)/Float(maxHpOfEnemy))*Float(myBoundSize.width*0.7)),height:Int(HPgaugeHeightOfEnemy))
         imageView.frame = HPgaugeXYOfEnemy
         view.addSubview(imageView)
@@ -258,15 +221,10 @@ class ViewController: UIViewController {
         let comp = atack(atacker:2)
 
         hpOfHeroLabel.text = String(hpOfHero)
-        //HPgaugeWidthOfHero = hpOfHeroLabel.frame.size.width
-        //HPgaugeHeightOfHero = hpOfHeroLabel.frame.size.height
-        //HPgaugeXOfHero = hpOfHeroLabel.frame.origin.x
-        //HPgaugeYOfHero = hpOfHeroLabel.frame.origin.y
         HPgaugeXYOfHero = CGRect(x:Int(HPgaugeXOfHero),y:Int(HPgaugeYOfHero),width:Int( Float(Float(hpOfHero)/Float(maxHpOfHero))*Float(myBoundSize.width*0.7)),height:Int(HPgaugeHeightOfHero))
         imageView2.frame = HPgaugeXYOfHero
         view.addSubview(imageView2)
         view.sendSubview(toBack: imageView2)
-        //HPgauge.draw(CGRect(x:Int(HPgauge.frame.origin.x),y:Int(HPgauge.frame.origin.y),width:Int( Float(hpOfHero/maxHpOfHero)*Float(HPgaugeMaxWidth)),height:Int(HPgaugeMaxHeight)))
         var SkillName = ""
         if enemyLevel==0{
             SkillName = skillListOfEnemy1[comp]
@@ -275,7 +233,6 @@ class ViewController: UIViewController {
         }else if enemyLevel==2{
             SkillName = skillListOfEnemy3[comp]
         }
-        //let SkillName:String = skillListOfEnemy[comp]
         let SkillDamage:Int = skillDamageList[SkillName]!
         battleMessage.text = "\(nameOfEnemy.text!)は\(SkillName)を使った！\n\(name.text!)は\(String(SkillDamage))のダメージを受けた。"
     }
@@ -350,8 +307,44 @@ class ViewController: UIViewController {
 
 
     class character {
+        var name:String!
+        var maxHp:Int!
+        var currentHp:Int!
+        var skill1:String!
+        var skill2:String!
+        var skill3:String!
+        var charaImage:UIImageView!
+        init(name:String) {
+            self.name = name;
+            maxHp = 100
+            skill1=""
+            skill2=""
+            skill3=""
+            //let vc = ViewController()
+            //vc.hpOfHero=100
+            //vc.enemyImage.image = #imageLiteral(resourceName: "勇者.jpg")
+        }
     }
-    class hero :character{
+    
+    class hero:character{
+        override init(name:String) {
+            super.init(name: name)
+            skill1="パンチ"
+            skill2="キック"
+            skill3="ヒーローアタック"
+        }
+    }
+    
+    class mage:character{
+        override init(name:String) {
+            super.init(name: name)
+            skill1="炎魔法"
+            skill2="光魔法"
+            skill3="ホーリースピア"
+        }
+    }
+    
+/*    class hero :character{
         var name:String = ""
         var hp:Int = 0
         init(name:String) {
@@ -359,6 +352,7 @@ class ViewController: UIViewController {
             self.hp = 100;
         }
     }
+ */
     class enemy:character{
         
     }
