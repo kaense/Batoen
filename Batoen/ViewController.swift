@@ -26,8 +26,8 @@ class ViewController: UIViewController {
     @IBOutlet var buttonDice: UIButton!
     @IBOutlet var buttonReset: UIButton!
     @IBOutlet var name: UILabel!
-    //a
     
+    //a
     let zukan:Dictionary=["勇者":1,"魔法使い":2,"スライム":3,"ドラゴン":4,"魔王":5]
     let skillListOfHero=["パンチ","キック","ヒーローアタック"]
     let skillListOfMage=["炎魔法","光魔法","ホーリースピア"]
